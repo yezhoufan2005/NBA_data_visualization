@@ -4,11 +4,11 @@ import seaborn as sns
 import numpy as np
 
 # 读取数据
-file_path = "data/TeamStatisticsWithOpponent_2021-2025.csv"
+file_path ="../data/TeamStatisticsWithOpponent_2021-2025.csv"
 df = pd.read_csv(file_path, encoding="utf-8")
 
 # 读取常规赛数据以获取gameId映射
-regular_season_path = "data/Game_regularseason_2021-2025.csv"
+regular_season_path ="../data/Game_regularseason_2021-2025.csv"
 df_regular = pd.read_csv(regular_season_path, encoding="utf-8")
 
 # 只保留常规赛的比赛

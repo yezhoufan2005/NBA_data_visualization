@@ -7,7 +7,7 @@ plt.rcParams['font.sans-serif'] = ['SimHei', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
 
 # 读取数据
-file_path = "data/TeamStatisticsWithOpponent_2021-2025.csv"
+file_path ="../data/TeamStatisticsWithOpponent_2021-2025.csv"
 df = pd.read_csv(file_path, encoding="utf-8")
 
 # 获取各队的平均总评分
@@ -18,7 +18,7 @@ top_teams = team_net_rat.head(10)
 
 # 创建球队ID到球队名称的映射
 team_id_to_name = {}
-postseason_path = "data/Game_postseason_2021-2025.csv"
+postseason_path ="../data/Game_postseason_2021-2025.csv"
 df_postseason = pd.read_csv(postseason_path, encoding="utf-8")
 for _, row in df_postseason.iterrows():
     team_id_to_name[row['hometeamId']] = row['hometeamName']

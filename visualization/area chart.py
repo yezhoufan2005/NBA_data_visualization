@@ -4,12 +4,12 @@ import seaborn as sns
 import numpy as np
 
 # 读取数据
-file_path = "data/TeamStatisticsWithOpponent_2021-2025.csv"
+file_path ="../data/TeamStatisticsWithOpponent_2021-2025.csv"
 df = pd.read_csv(file_path, encoding="utf-8")
 
 # 读取常规赛和季后赛数据以获取gameId映射
-regular_season_path = "data/Game_regularseason_2021-2025.csv"
-postseason_path = "data/Game_postseason_2021-2025.csv"
+regular_season_path ="../data/Game_regularseason_2021-2025.csv"
+postseason_path ="../data/Game_postseason_2021-2025.csv"
 
 df_regular = pd.read_csv(regular_season_path, encoding="utf-8")
 df_postseason = pd.read_csv(postseason_path, encoding="utf-8")
@@ -22,7 +22,7 @@ all_valid_game_ids = set(all_valid_games['gameId'].tolist())
 df = df[df['gameId'].isin(all_valid_game_ids)]
 
 # 从team_preprocess.py获取数据，添加日期信息
-team_preprocess_path = "data/TeamStatistics_2021-2025.csv"
+team_preprocess_path ="../data/TeamStatistics_2021-2025.csv"
 df_with_date = pd.read_csv(team_preprocess_path, encoding="utf-8")
 
 # 将gameId映射到日期 - 使用suffixes参数避免列名冲突

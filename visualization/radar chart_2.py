@@ -9,11 +9,11 @@ plt.rcParams['font.sans-serif'] = ['SimHei', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
 
 # 读取数据
-file_path = "data/TeamStatisticsWithOpponent_2021-2025.csv"
+file_path ="../data/TeamStatisticsWithOpponent_2021-2025.csv"
 df = pd.read_csv(file_path, encoding="utf-8")
 
 # 读取季后赛数据以获取gameId映射
-postseason_path = "data/Game_postseason_2021-2025.csv"
+postseason_path ="../data/Game_postseason_2021-2025.csv"
 df_postseason = pd.read_csv(postseason_path, encoding="utf-8")
 
 # 只保留季后赛赛的比赛
@@ -29,7 +29,7 @@ champion_team_names = {}  # 存储冠军队伍名称
 for year in [2021, 2022, 2023, 2024, 2025]:
     nba_finals_data = df_postseason[
         (df_postseason['year'] == year) &
-        (df_postseason['gameLabel'].isin(['East Conf. Finals', 'East - Conf. Finals']))
+        (df_postseason['gameLabel'].isin(['West Conf. Finals', 'West - Conf. Finals']))
     ]
 
     if not nba_finals_data.empty:
@@ -120,7 +120,7 @@ for idx,(year,values) in enumerate(champion_averages.items()):
 
 ax.set_xticks(angles[:-1])
 ax.set_xticklabels(metric_names)
-ax.set_title('21-25赛季历届NBA东部决赛冠军球队攻防指标雷达图',size=16,fontweight='bold',pad=20)
+ax.set_title('21-25赛季历届NBA西部决赛冠军球队攻防指标雷达图',size=16,fontweight='bold',pad=20)
 ax.grid(True)
 ax.legend(loc='upper right',bbox_to_anchor=(1.1,1.1))
 
